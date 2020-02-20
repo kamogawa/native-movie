@@ -2,8 +2,11 @@ import React from "react";
 import MoviesPresenter from "./MoviesPresenter";
 
 export default class extends React.Component {
-
+  state = {
+    loading: true
+  };
   render() {
-    return <MoviesPresenter />;
+    const { loading } = this.state;
+    return <MoviesPresenter loading={loading} />;
   }
 }

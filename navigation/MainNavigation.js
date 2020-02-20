@@ -9,19 +9,20 @@ const MainNavigation = createStackNavigator(
     Tabs: {
       screen: TabNavigation,
       navigationOptions: {
-        header: null
+      headerBackTitleVisible: false,
+        headerShown: false
       }
     },
     Detail: {
       screen: DetailScreen,
       navigationOptions: {
+      headerBackTitleVisible: false,
         ...headerStyles
       }
-    }
+    },
   },
   {
-    headerMode: "screen",
-    headerBackTitleVisible: false
+    headerMode: "screen"
   }
 );
 
