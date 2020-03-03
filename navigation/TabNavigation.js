@@ -47,6 +47,7 @@ const TabNavigation = createBottomTabNavigator(
     }
   },
   {
+    initialRouteName: "Search",
     tabBarOptions: {
       showLabel: false,
       style: {

@@ -2,13 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-const 
-
-const MovieSlide = ({posterPhoto,
-    backgroundPhoto,
-    title,
-    voteAvg,
-    overview}) => null;
+const MovieSlide = ({
+  posterPhoto,
+  backgroundPhoto,
+  title,
+  voteAvg,
+  overview
+}) => null;
 
 MovieSlide.propTypes = {
   id: PropTypes.number.isRequired,

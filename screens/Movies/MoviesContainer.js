@@ -1,6 +1,6 @@
 import React from "react";
 import MoviesPresenter from "./MoviesPresenter";
-import { movies } from "../../api";
+import { movies } from "../../src/api";
 
 export default class extends React.Component {
   state = {
@@ -23,6 +23,7 @@ export default class extends React.Component {
       ({
         data: { results: nowPlaying }
       } = await movies.getNowPlaying());
+      console.log(upcoming);
     } catch (error) {
       console.log(error);
       error = "Can't get Movies.";
