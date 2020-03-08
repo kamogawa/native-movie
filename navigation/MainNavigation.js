@@ -9,14 +9,14 @@ const MainNavigation = createStackNavigator(
     Tabs: {
       screen: TabNavigation,
       navigationOptions: {
-      headerBackTitleVisible: false,
+        headerBackTitleVisible: false,
         headerShown: false
       }
     },
     Detail: {
       screen: DetailScreen,
       navigationOptions: {
-      headerBackTitleVisible: false,
+        headerBackTitleVisible: false,
         ...headerStyles
       }
     },
