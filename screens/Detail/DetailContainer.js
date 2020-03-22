@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { movies, tv } from "../../api";
 import DetailPresenter from "./DetailPresenter";
 
 export default class extends React.Component {
@@ -39,10 +39,40 @@ export default class extends React.Component {
   }
 
   async componentDidMount() {
+    const { isMovie, id } = this.state;
+    let error, genres, overview, status, date, backgroundPhoto;
     try {
-    } catch {
+      if (isMovie) {
+        ({
+          genres,
+          overview,
+          status,
+          release_date: date,
+          backdrop_path: backgroundPhoto
+        } = await movies.getMovie(id));
+      } else {
+        ({
+          genres,
+          overview,
+          status,
+          first_air_date: date,
+          backdrop_path: backgroundPhoto
+        } = await tv.getShow(id));
+      }
+    } catch (error) {
+      console.log(error);
     } finally {
-      this.setState({ loading: false });
+      this.setState(prev => {
+        return {
+          ...prev,
+          loading: false,
+          genres,
+          backgroundPhoto,
+          overview,
+          status,
+          date
+        };
+      });
     }
   }
 
